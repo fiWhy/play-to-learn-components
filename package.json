@@ -17,12 +17,10 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "npm run storybook",
+    "start": "bit compile && bit start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public",
     "prepare": "husky install",
     "release": "git-branch-is master && standard-version",
     "lint:css": "stylelint './src/**/*.ts'",
@@ -59,12 +57,6 @@
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
-    "@storybook/addon-actions": "^6.3.4",
-    "@storybook/addon-essentials": "^6.3.4",
-    "@storybook/addon-links": "^6.3.4",
-    "@storybook/node-logger": "^6.3.4",
-    "@storybook/preset-create-react-app": "^3.2.0",
-    "@storybook/react": "^6.3.4",
     "git-branch-is": "^4.0.0",
     "husky": "^7.0.1",
     "standard-version": "^9.3.1",
