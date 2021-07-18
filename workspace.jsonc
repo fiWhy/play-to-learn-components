@@ -1,7 +1,7 @@
 /**
  * this is the main configuration file of your bit workspace.
  * for full documentation, please see: https://harmony-docs.bit.dev/workspace/configurations
- **/ {
+ **/{
   "$schema": "https://static.bit.dev/teambit/schemas/schema.json",
   /**
    * main configuration of the Bit workspace.
@@ -37,9 +37,21 @@
      */
     "packageManager": "teambit.dependencies/pnpm",
     "policy": {
-      "dependencies": {},
-      "peerDependencies": {}
-    }
+      "dependencies": {
+        "styled-components": "5.3.0"
+      },
+      "peerDependencies": {
+        "react": "17.0.2",
+        "react-dom": "17.0.2"
+      }
+    },
+    "packageManagerArgs": [],
+    "devFilePatterns": [
+      "**/*.spec.ts"
+    ],
+    "strictPeerDependencies": true,
+    "installFromBitDevRegistry": true,
+    "savePrefix": ""
   },
   /**
    * workspace variants allow to set different subsets of configuration for components in your
@@ -52,11 +64,20 @@
     /**
      * "*" is a special rule which applied on all components in the workspace.
      **/
-    "*": {
-      /**
-       * uncomment to apply the chosen environment on all components.
-       **/
-      "teambit.react/react": {}
+    "{ptl-components}": {
+      "teambit.harmony/aspect": {}
     }
-  }
+    // "*": {
+    //   /**
+    //    * uncomment to apply the chosen environment on all components.
+    //    **/
+    //   "teambit.react/react": {}
+    // }
+  },
+  "teambit.generator/generator": {
+    "aspects": [
+      "play-to-learn.components/ptl-components"
+    ]
+  },
+  "play-to-learn.components/ptl-components": {}
 }
