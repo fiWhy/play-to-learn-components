@@ -37,9 +37,8 @@ export * from './interfaces';
             {
               relativePath: 'interfaces.ts',
               content: `export interface ${context.namePascalCase}Props {
-/**
-  * a text to be rendered in the component.
-*/
+  className?: string;
+  elementId?: string;
 };
 `,
             },
@@ -56,18 +55,20 @@ export const ${context.namePascalCase}Wrapper = styled.div\`\`;`,
             {
               relativePath: `${context.name}.tsx`,
               content: `import React, { FC } from 'react';
+import { automationEnchancement } from '@play-to-learn/components.hocs.automation-enchancement';
+
 import { ${context.namePascalCase}Props } from './interfaces';
 import { ${context.namePascalCase}Wrapper } from './styles';
 
-const ${context.namePascalCase}: FC<${context.namePascalCase}Props> = ({ children }) => {
+const ${context.namePascalCase}: FC<${context.namePascalCase}Props> = ({ children, className, elementId }) => {
   return (
-    <${context.namePascalCase}Wrapper>
+    <${context.namePascalCase}Wrapper id={elementId} className={className}>
       {children}
     </${context.namePascalCase}Wrapper>
   );
 }
 
-export default ${context.namePascalCase};`,
+export default automationEnchancement(${context.namePascalCase}, '${context.name}');`,
             },
 
             // docs file
@@ -86,9 +87,10 @@ import ${context.namePascalCase} from './${context.name}';
             {
               relativePath: `${context.name}.composition.tsx`,
               content: `import React from 'react';
-import ${context.namePascalCase} from './${context.name}';
 import { ThemeProvider } from 'styled-components';
 import theme from '@play-to-learn/components.theme.palette';
+
+import ${context.namePascalCase} from './${context.name}';
 
 export const Basic${context.namePascalCase} = () => (
   <ThemeProvider theme={theme.dark}>

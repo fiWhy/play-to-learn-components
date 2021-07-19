@@ -6,28 +6,32 @@ import baseStyled, {
 
 const theme = {
   dark: {
-    primary: {
-      main: '#2757FF',
-      focus: '#2846B1',
-      active: '#2F3756',
+    colors: {
+      primary: {
+        main: '#2757FF',
+        focus: '#2846B1',
+        active: '#2F3756',
+      },
+      secondary: {
+        dark01: '#1C233A',
+        dark02: '#333A53',
+      },
+      uiBackground: '#fff',
     },
-    secondary: {
-      dark01: '#1C233A',
-      dark02: '#333A53',
-    },
-    uiBackground: '#fff',
   },
   light: {
-    primary: {
-      main: '#2757FF',
-      focus: '#2846B1',
-      active: '#2F3756',
+    colors: {
+      primary: {
+        main: '#2757FF',
+        focus: '#2846B1',
+        active: '#2F3756',
+      },
+      secondary: {
+        dark01: '#1C233A',
+        dark02: '#333A53',
+      },
+      uiBackground: '#fff',
     },
-    secondary: {
-      dark01: '#1C233A',
-      dark02: '#333A53',
-    },
-    uiBackground: '#fff',
   },
 };
 
