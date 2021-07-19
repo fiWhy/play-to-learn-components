@@ -6,7 +6,6 @@ importers:
       '@commitlint/config-conventional': registry.npmjs.org/@commitlint/config-conventional/12.1.4
       '@teambit/harmony': registry.npmjs.org/@teambit/harmony/0.2.11
       '@testing-library/jest-dom': registry.npmjs.org/@testing-library/jest-dom/5.14.1
-      '@testing-library/react-hooks': registry.npmjs.org/@testing-library/react-hooks/7.0.1_react-dom@17.0.2+react@17.0.2
       '@testing-library/user-event': registry.npmjs.org/@testing-library/user-event/12.8.3
       classnames: registry.npmjs.org/classnames/2.3.1
       core-js: registry.npmjs.org/core-js/3.15.2
@@ -26,6 +25,7 @@ importers:
       web-vitals: registry.npmjs.org/web-vitals/1.1.2
     devDependencies:
       '@testing-library/react': registry.npmjs.org/@testing-library/react/12.0.0_react-dom@17.0.2+react@17.0.2
+      '@testing-library/react-hooks': registry.npmjs.org/@testing-library/react-hooks/7.0.1_react-dom@17.0.2+react@17.0.2
       '@types/jest': registry.npmjs.org/@types/jest/26.0.20
       '@types/lodash': registry.npmjs.org/@types/lodash/4.14.171
       '@types/node': registry.npmjs.org/@types/node/12.20.4
@@ -76,6 +76,8 @@ importers:
   src/components/ptl-hooks:
     specifiers: {}
   src/components/theme/palette:
+    specifiers: {}
+  src/components/theme/use-theme-type:
     specifiers: {}
   src/components/ui/avatar:
     specifiers: {}
@@ -885,7 +887,7 @@ packages:
       react: registry.npmjs.org/react/17.0.2
       react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
       react-error-boundary: registry.npmjs.org/react-error-boundary/3.1.3_react@17.0.2
-    dev: false
+    dev: true
     engines:
       node: '>=12'
     id: registry.npmjs.org/@testing-library/react-hooks/7.0.1
@@ -1053,6 +1055,7 @@ packages:
       tarball: https://registry.npmjs.org/@types/parse-json/-/parse-json-4.0.0.tgz
     version: 4.0.0
   registry.npmjs.org/@types/prop-types/15.7.4:
+    dev: true
     name: '@types/prop-types'
     resolution:
       integrity: sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==
@@ -1062,6 +1065,7 @@ packages:
   registry.npmjs.org/@types/react-dom/17.0.9:
     dependencies:
       '@types/react': registry.npmjs.org/@types/react/17.0.14
+    dev: true
     name: '@types/react-dom'
     resolution:
       integrity: sha512-wIvGxLfgpVDSAMH5utdL9Ngm5Owu0VsGmldro3ORLXV8CShrL8awVj06NuEXFQ5xyaYfdca7Sgbk/50Ri1GdPg==
@@ -1071,7 +1075,7 @@ packages:
   registry.npmjs.org/@types/react-test-renderer/17.0.1:
     dependencies:
       '@types/react': registry.npmjs.org/@types/react/17.0.14
-    dev: false
+    dev: true
     name: '@types/react-test-renderer'
     resolution:
       integrity: sha512-3Fi2O6Zzq/f3QR9dRnlnHso9bMl7weKCviFmfF6B4LS1Uat6Hkm15k0ZAQuDz+UBq6B3+g+NM6IT2nr5QgPzCw==
@@ -1083,6 +1087,7 @@ packages:
       '@types/prop-types': registry.npmjs.org/@types/prop-types/15.7.4
       '@types/scheduler': registry.npmjs.org/@types/scheduler/0.16.2
       csstype: registry.npmjs.org/csstype/3.0.8
+    dev: true
     name: '@types/react'
     resolution:
       integrity: sha512-0WwKHUbWuQWOce61UexYuWTGuGY/8JvtUe/dtQ6lR4sZ3UiylHotJeWpf3ArP9+DSGUoLY3wbU59VyMrJps5VQ==
@@ -1090,6 +1095,7 @@ packages:
       tarball: https://registry.npmjs.org/@types/react/-/react-17.0.14.tgz
     version: 17.0.14
   registry.npmjs.org/@types/scheduler/0.16.2:
+    dev: true
     name: '@types/scheduler'
     resolution:
       integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==
@@ -2045,6 +2051,7 @@ packages:
       tarball: https://registry.npmjs.org/cssesc/-/cssesc-3.0.0.tgz
     version: 3.0.0
   registry.npmjs.org/csstype/3.0.8:
+    dev: true
     name: csstype
     resolution:
       integrity: sha512-jXKhWqXPmlUeoQnF/EhTtTl4C9SnrxSH/jZUih3jmO6lBKr99rP3/+FmrMj4EFpOXzMtXHAZkd3x0E6h6Fgflw==
@@ -4333,7 +4340,7 @@ packages:
     dependencies:
       '@babel/runtime': registry.npmjs.org/@babel/runtime/7.12.18
       react: registry.npmjs.org/react/17.0.2
-    dev: false
+    dev: true
     engines:
       node: '>=10'
       npm: '>=6'

@@ -5,7 +5,7 @@ import classNames from 'classnames';
 
 export const automationEnchancement = <P extends AutomationEnchancementProps>(
   Component: React.ComponentType<P>,
-  namespace?: string,
+  namespace: string,
   defaultId?: string
 ) => {
   const displayName = Component.displayName || Component.name || 'Component';
