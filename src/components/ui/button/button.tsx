@@ -1,13 +1,15 @@
 import React, { FC } from 'react';
+import { automationEnchancement } from '@play-to-learn/components.hocs.automation-enchancement';
+
 import { ButtonProps } from './interfaces';
 import { ButtonWrapper } from './styles';
 
-const Button: FC<ButtonProps> = ({ children }) => {
+const Button: FC<ButtonProps> = ({ children, elementId, className }) => {
   return (
-    <ButtonWrapper>
+    <ButtonWrapper id={elementId} className={className}>
       {children}
     </ButtonWrapper>
   );
-}
+};
 
-export default Button;
+export default automationEnchancement(Button, 'button');

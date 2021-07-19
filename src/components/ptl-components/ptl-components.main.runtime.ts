@@ -36,7 +36,10 @@ export * from './interfaces';
             // interfaces file
             {
               relativePath: 'interfaces.ts',
-              content: `export interface ${context.namePascalCase}Props {
+              content: `import { ReactNode } from 'react';
+              
+export interface ${context.namePascalCase}Props {
+  children?: ReactNode | ReactNode[];
   className?: string;
   elementId?: string;
 };

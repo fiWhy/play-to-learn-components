@@ -1,5 +1,7 @@
+import { ReactNode } from 'react';
+
 export interface ButtonProps {
-/**
-  * a text to be rendered in the component.
-*/
-};
+  children?: ReactNode | ReactNode[];
+  className?: string;
+  elementId?: string;
+}

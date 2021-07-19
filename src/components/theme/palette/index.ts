@@ -6,7 +6,7 @@ import baseStyled, {
 
 const theme = {
   dark: {
-    colors: {
+    color: {
       primary: {
         main: '#2757FF',
         focus: '#2846B1',
@@ -15,12 +15,16 @@ const theme = {
       secondary: {
         dark01: '#1C233A',
         dark02: '#333A53',
+        white: '#fff',
       },
       uiBackground: '#fff',
     },
+    radius: {
+      button: '5px',
+    },
   },
   light: {
-    colors: {
+    color: {
       primary: {
         main: '#2757FF',
         focus: '#2846B1',
@@ -29,6 +33,7 @@ const theme = {
       secondary: {
         dark01: '#1C233A',
         dark02: '#333A53',
+        white: '#fff',
       },
       uiBackground: '#fff',
     },

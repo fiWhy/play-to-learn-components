@@ -1,5 +1,7 @@
+import { ReactNode } from 'react';
+
 export interface TextProps {
-/**
-  * a text to be rendered in the component.
-*/
-};
+  children?: ReactNode | ReactNode[];
+  className?: string;
+  elementId?: string;
+}
