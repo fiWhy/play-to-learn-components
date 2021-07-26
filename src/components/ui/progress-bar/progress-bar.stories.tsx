@@ -6,32 +6,25 @@ import theme, {
   Fonts,
 } from '@play-to-learn/components.theme.palette';
 
-import Avatar, { AvatarProps } from '.';
+import ProgressBar, { ProgressBarProps } from './';
 
 export default {
-  title: 'ui/Avatar',
-  component: Avatar,
+  title: 'ui/ProgressBar',
+  component: ProgressBar,
 } as Meta;
 
-const Template: Story<AvatarProps> = (args) => (
+const Template: Story<ProgressBarProps> = (args) => (
   <ThemeProvider theme={theme.dark}>
-    <GlobalStyle />
     <Fonts />
-    <Avatar {...args} />
+    <GlobalStyle />
+    <ProgressBar {...args}>Hello from ProgressBar</ProgressBar>
   </ThemeProvider>
 );
 
 export const Default = Template.bind({});
 
 Default.args = {
-  src: 'https://cs5-1.4pda.to/16630063.png',
-  type: 'big',
-  placeholder: 'DB',
-};
-
-export const WithPlaceholder = Template.bind({});
-
-WithPlaceholder.args = {
-  type: 'big',
-  placeholder: 'DB',
+  total: 200,
+  actual: 75,
+  color: '#EB4D4D',
 };

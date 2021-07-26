@@ -1,21 +1,33 @@
-import React, { FC, forwardRef, ForwardRefExoticComponent } from 'react';
 import { automationEnchancement } from '@play-to-learn/components.hocs.automation-enchancement';
-
+import Text from '@play-to-learn/components.ui.text';
+import React, { forwardRef } from 'react';
 import { ButtonProps } from './interfaces';
-import { ButtonWrapperStyled } from './styles';
+import {
+  ButtonContentStyled,
+  ButtonTipStyled,
+  ButtonWrapperStyled,
+} from './styles';
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ children, elementId, className }, ref) => {
+  ({ children, elementId, btnType, tip, ...other }, ref) => {
     return (
       <ButtonWrapperStyled
+        {...other}
         data-testid={elementId}
+        btnType={btnType}
         ref={ref}
-        className={className}
       >
-        {children}
+        {tip && (
+          <ButtonTipStyled>
+            <Text type={'Body-Small'} secondary>
+              {tip}
+            </Text>
+          </ButtonTipStyled>
+        )}
+        <ButtonContentStyled>{children}</ButtonContentStyled>
       </ButtonWrapperStyled>
     );
   }
 );
 
-export default automationEnchancement(Button, 'button');
+export default automationEnchancement<ButtonProps>(Button, 'button');

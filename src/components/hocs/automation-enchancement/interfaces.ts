@@ -7,5 +7,5 @@ export interface AutomationEnchancementProps {
   generateId?: boolean;
   uniqueId?: (t: string) => string;
   innerRef?: any;
-  children?: ReactNode | ReactNode[];
+  children?: ReactNode;
 }

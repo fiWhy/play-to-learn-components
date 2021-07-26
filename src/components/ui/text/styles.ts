@@ -23,8 +23,9 @@ export const styles = css<TextStyleProps>`
           white-space: nowrap;
         `
       : ''}
-    &.bold {
-    font-weight: 500;
+      
+  &.bold {
+    font-weight: 600;
   }
 
   &.italic {

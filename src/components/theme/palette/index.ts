@@ -46,12 +46,12 @@ const general = {
       'Body-Small': `
               font-size: 12px;
               line-height: 17px;
-              font-weight: 200;
+              font-weight: normal;
             `,
       'Body-Extra-Small': `
               font-size: 10px;
               line-height: 10px;
-              font-weight: 200;
+              font-weight: normal;
             `,
     },
   },
@@ -76,6 +76,14 @@ const theme = {
         dark01: '#1C233A',
         dark02: '#333A53',
         dark03: '#232A43',
+        dark04: '#343D56',
+        blue01: '#145DEA',
+        blue02: '#5781EE',
+        blue03: '#5286EB',
+        grey01: '#535B70',
+        grey02: '#4E4E4E',
+        grey03: '#E2E2E2',
+        red01: '#EB4D4D',
         white: '#fff',
       },
       uiBackground: '#fff',
@@ -93,6 +101,14 @@ const theme = {
         dark01: '#1C233A',
         dark02: '#333A53',
         dark03: '#232A43',
+        dark04: '#343D56',
+        blue01: '#145DEA',
+        blue02: '#5781EE',
+        blue03: '#5286EB',
+        grey01: '#535B70',
+        grey02: '#4E4E4E',
+        grey03: '#E2E2E2',
+        red01: '#EB4D4D',
         white: '#fff',
       },
       uiBackground: '#fff',

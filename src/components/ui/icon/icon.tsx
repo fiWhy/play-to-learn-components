@@ -25,4 +25,4 @@ const Icon: FC<IconProps> = ({
   );
 };
 
-export default automationEnchancement(Icon, 'icon');
+export default automationEnchancement<IconProps>(Icon, 'icon');

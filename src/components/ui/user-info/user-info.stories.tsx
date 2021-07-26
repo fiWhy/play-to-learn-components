@@ -6,32 +6,29 @@ import theme, {
   Fonts,
 } from '@play-to-learn/components.theme.palette';
 
-import Avatar, { AvatarProps } from '.';
+import UserInfo, { UserInfoProps } from './';
 
 export default {
-  title: 'ui/Avatar',
-  component: Avatar,
+  title: 'ui/UserInfo',
+  component: UserInfo,
 } as Meta;
 
-const Template: Story<AvatarProps> = (args) => (
+const Template: Story<UserInfoProps> = (args) => (
   <ThemeProvider theme={theme.dark}>
-    <GlobalStyle />
     <Fonts />
-    <Avatar {...args} />
+    <GlobalStyle />
+    <UserInfo {...args} />
   </ThemeProvider>
 );
 
 export const Default = Template.bind({});
 
 Default.args = {
-  src: 'https://cs5-1.4pda.to/16630063.png',
-  type: 'big',
-  placeholder: 'DB',
-};
-
-export const WithPlaceholder = Template.bind({});
-
-WithPlaceholder.args = {
-  type: 'big',
-  placeholder: 'DB',
+  image: 'https://via.placeholder.com/150',
+  placeholder: 'AU',
+  name: 'Anonymous User',
+  healthTotal: 200,
+  healthActual: 120,
+  staminaTotal: 100,
+  staminaActual: 89,
 };

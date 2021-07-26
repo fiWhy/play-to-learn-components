@@ -2,7 +2,7 @@ import { styled, css } from '@play-to-learn/components.theme.palette';
 import { FlexBoxElementProps } from './interfaces';
 
 export const FlexBoxWrapperStyled = styled.div<FlexBoxElementProps>`
-  display: flex;
+  display: ${({ flexType }) => flexType || 'flex'};
   flex-direction: ${({ direction }) => direction || 'column'};
   justify-content: ${({ justify }) => justify || 'flex-start'};
   align-items: ${({ align }) => align || 'flex-start'};

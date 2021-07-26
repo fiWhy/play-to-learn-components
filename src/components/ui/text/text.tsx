@@ -68,4 +68,4 @@ const Text: FC<TextProps> = (
   );
 };
 
-export default automationEnchancement(Text, 'text');
+export default automationEnchancement<TextProps>(Text, 'text');

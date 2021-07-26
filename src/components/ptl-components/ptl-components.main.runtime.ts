@@ -102,7 +102,7 @@ const ${context.namePascalCase}: FC<${context.namePascalCase}Props> = ({ childre
   );
 }
 
-export default automationEnchancement(${context.namePascalCase}, '${context.name}');`,
+export default automationEnchancement<${context.namePascalCase}Props>(${context.namePascalCase}, '${context.name}');`,
             },
 
             // docs file

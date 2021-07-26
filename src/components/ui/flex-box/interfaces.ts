@@ -6,6 +6,7 @@ export interface FlexBoxElementProps {
   align?: 'center' | 'flex-start' | 'flex-end';
   direction?: 'row' | 'column';
   flex?: number;
+  flexType?: 'inline-flex' | 'flex';
   colSpace?: number | string;
   rowSpace?: number | string;
 }

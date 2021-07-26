@@ -77,7 +77,7 @@ const Inventory = forwardRef<HTMLDivElement, InventoryProps>(
       >
         <InventoryButtonStyled direction={'row'} onClick={handleToggleOpen}>
           <TreasureIconStyled name={'ColoredTreasureBox'} size={32} />
-          <ArrowIconStyled name={'RiArrowDownSLine'} />
+          <ArrowIconStyled name={'RiArrowRightSLine'} />
         </InventoryButtonStyled>
         <InventoryBodyStyled innerRef={inventoryBodyRef}>
           <InventoryHeaderStyled>
@@ -118,4 +118,4 @@ const Inventory = forwardRef<HTMLDivElement, InventoryProps>(
   }
 );
 
-export default automationEnchancement(Inventory, 'inventory');
+export default automationEnchancement<InventoryProps>(Inventory, 'inventory');

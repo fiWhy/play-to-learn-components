@@ -6,6 +6,8 @@ import theme, {
   Fonts,
 } from '@play-to-learn/components.theme.palette';
 
+import Icon from '@play-to-learn/components.ui.icon';
+
 import Button, { ButtonProps } from './';
 
 export default {
@@ -24,3 +26,26 @@ const Template: Story = (args: ButtonProps) => (
 export const Default = Template.bind({});
 
 Default.args = {};
+
+const ButtonCircleTemplate: Story = (args: ButtonProps) => (
+  <ThemeProvider theme={theme.dark}>
+    <Fonts />
+    <GlobalStyle />
+    <Button {...args}>
+      <Icon size={30} name={'RiArrowDownSLine'} />
+    </Button>
+  </ThemeProvider>
+);
+
+export const Circle = ButtonCircleTemplate.bind({});
+
+Circle.args = {
+  btnType: 'circle',
+};
+
+export const CircleWithTip = ButtonCircleTemplate.bind({});
+
+CircleWithTip.args = {
+  btnType: 'circle',
+  tip: 20,
+};
