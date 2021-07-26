@@ -3,11 +3,6 @@
   "version": "0.1.2",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/user-event": "^12.8.3",
-    "@types/jest": "^26.0.24",
-    "@types/react": "^17.0.14",
-    "@types/react-dom": "^17.0.9",
     "typescript": "^4.3.5",
     "web-vitals": "^1.1.2"
   },
@@ -16,7 +11,9 @@
     "test": "bit test",
     "prepare": "husky install",
     "release": "git-branch-is master && standard-version",
-    "lint:css": "stylelint './src/**/*.ts'"
+    "lint:css": "stylelint './src/**/*.ts'",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "eslintConfig": {
     "extends": [

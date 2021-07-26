@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export interface AutomationEnchancementProps {
   className?: string;
   specialName?: string;
@@ -5,4 +7,5 @@ export interface AutomationEnchancementProps {
   generateId?: boolean;
   uniqueId?: (t: string) => string;
   innerRef?: any;
+  children?: ReactNode | ReactNode[];
 }

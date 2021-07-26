@@ -41,7 +41,7 @@ export class PtlHooksMain {
 `,
             },
 
-            // component file
+            // hook file
             {
               relativePath: `${context.name}.tsx`,
               content: `import { ${context.namePascalCase.slice(

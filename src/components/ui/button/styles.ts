@@ -1,6 +1,6 @@
 import { styled } from '@play-to-learn/components.theme.palette';
 
-export const ButtonWrapper = styled.button`
+export const ButtonWrapperStyled = styled.button`
   padding: 10px 30px;
   min-height: 37px;
   border: none;

@@ -1,13 +1,14 @@
 import React, { FC } from 'react';
-import { AvatarProps } from './interfaces';
-import { AvatarWrapper } from './styles';
 import { automationEnchancement } from '@play-to-learn/components.hocs.automation-enchancement';
+
+import { AvatarProps } from './interfaces';
+import { AvatarWrapperStyled } from './styles';
 
 const Avatar: FC<AvatarProps> = ({ children, className, elementId }) => {
   return (
-    <AvatarWrapper id={elementId} className={className}>
+    <AvatarWrapperStyled data-testid={elementId} className={className}>
       {children}
-    </AvatarWrapper>
+    </AvatarWrapperStyled>
   );
 };
 

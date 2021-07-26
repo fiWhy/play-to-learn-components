@@ -2,56 +2,80 @@
 
 {
     "hocs/automation-enchancement": {
-        "scope": "",
-        "version": "",
+        "scope": "play-to-learn.components",
+        "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "src/components/hocs/automation-enchancement"
     },
+    "hooks/use-click-outside": {
+        "scope": "play-to-learn.components",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "src/components/hooks/use-click-outside"
+    },
     "ptl-components": {
-        "scope": "",
-        "version": "",
+        "scope": "play-to-learn.components",
+        "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "src/components/ptl-components"
     },
     "ptl-hocs": {
-        "scope": "",
-        "version": "",
+        "scope": "play-to-learn.components",
+        "version": "0.0.1",
         "mainFile": "index.ts",
         "rootDir": "src/components/ptl-hocs"
     },
     "ptl-hooks": {
-        "scope": "",
-        "version": "",
+        "scope": "play-to-learn.components",
+        "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "src/components/ptl-hooks"
     },
     "theme/palette": {
-        "scope": "",
-        "version": "",
+        "scope": "play-to-learn.components",
+        "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "src/components/theme/palette"
     },
     "theme/use-theme-type": {
-        "scope": "",
-        "version": "",
+        "scope": "play-to-learn.components",
+        "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "src/components/theme/use-theme-type"
     },
     "ui/avatar": {
-        "scope": "",
-        "version": "",
+        "scope": "play-to-learn.components",
+        "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "src/components/ui/avatar"
     },
     "ui/button": {
-        "scope": "",
-        "version": "",
+        "scope": "play-to-learn.components",
+        "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "src/components/ui/button"
     },
+    "ui/flex-box": {
+        "scope": "play-to-learn.components",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "src/components/ui/flex-box"
+    },
+    "ui/icon": {
+        "scope": "play-to-learn.components",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "src/components/ui/icon"
+    },
+    "ui/inventory": {
+        "scope": "play-to-learn.components",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "src/components/ui/inventory"
+    },
     "ui/text": {
-        "scope": "",
-        "version": "",
+        "scope": "play-to-learn.components",
+        "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "src/components/ui/text"
     },

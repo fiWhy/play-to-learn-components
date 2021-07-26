@@ -1,7 +1,3 @@
-import { ReactNode } from 'react';
+import { AutomationEnchancementProps } from '@play-to-learn/components.hocs.automation-enchancement';
 
-export interface ButtonProps {
-  children?: ReactNode | ReactNode[];
-  className?: string;
-  elementId?: string;
-}
+export interface ButtonProps extends AutomationEnchancementProps {}

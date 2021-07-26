@@ -23,26 +23,57 @@ export class PtlComponentsMain {
         name: 'ptl-component',
         description: 'Functional component module',
         generateFiles: (context: ComponentContext) => {
+          const potentialNamespace = context.name.split('/')[0];
+          const componentNamespace =
+            !potentialNamespace || potentialNamespace === context.name
+              ? 'ui'
+              : potentialNamespace;
           return [
             // index file
             {
               relativePath: 'index.ts',
               isMain: true,
-              content: `export { default as ${context.namePascalCase} } from './${context.name}';
+              content: `export { default } from './${context.name}';
 export * from './interfaces';
 `,
+            },
+
+            // story
+            {
+              relativePath: `${context.name}.stories.tsx`,
+              content: `import React from 'react';
+import { Meta, Story } from '@storybook/react';
+import { ThemeProvider } from 'styled-components';
+import theme, {
+  GlobalStyle,
+  Fonts,
+} from '@play-to-learn/components.theme.palette';
+
+
+import ${context.namePascalCase}, { ${context.namePascalCase}Props }  from './';
+
+export default {
+  title: '${componentNamespace}/${context.namePascalCase}',
+  component: ${context.namePascalCase},
+} as Meta;
+
+const Template: Story<${context.namePascalCase}Props> = (args) => <ThemeProvider theme={theme.dark}>
+    <Fonts />
+    <GlobalStyle />
+    <${context.namePascalCase} {...args}>Hello from ${context.namePascalCase}</${context.namePascalCase}>
+  </ThemeProvider>
+
+export const Default = Template.bind({});
+
+Default.args = { };`,
             },
 
             // interfaces file
             {
               relativePath: 'interfaces.ts',
-              content: `import { ReactNode } from 'react';
+              content: `import { AutomationEnchancementProps } from '@play-to-learn/components.hocs.automation-enchancement';
               
-export interface ${context.namePascalCase}Props {
-  children?: ReactNode | ReactNode[];
-  className?: string;
-  elementId?: string;
-};
+export interface ${context.namePascalCase}Props extends AutomationEnchancementProps { };
 `,
             },
 
@@ -51,7 +82,7 @@ export interface ${context.namePascalCase}Props {
               relativePath: 'styles.ts',
               content: `import { styled } from '@play-to-learn/components.theme.palette';
 
-export const ${context.namePascalCase}Wrapper = styled.div\`\`;`,
+export const ${context.namePascalCase}WrapperStyled = styled.div\`\`;`,
             },
 
             // component file
@@ -61,13 +92,13 @@ export const ${context.namePascalCase}Wrapper = styled.div\`\`;`,
 import { automationEnchancement } from '@play-to-learn/components.hocs.automation-enchancement';
 
 import { ${context.namePascalCase}Props } from './interfaces';
-import { ${context.namePascalCase}Wrapper } from './styles';
+import { ${context.namePascalCase}WrapperStyled } from './styles';
 
 const ${context.namePascalCase}: FC<${context.namePascalCase}Props> = ({ children, className, elementId }) => {
   return (
-    <${context.namePascalCase}Wrapper id={elementId} className={className}>
+    <${context.namePascalCase}WrapperStyled data-testid={elementId} className={className}>
       {children}
-    </${context.namePascalCase}Wrapper>
+    </${context.namePascalCase}WrapperStyled>
   );
 }
 
@@ -90,16 +121,10 @@ import ${context.namePascalCase} from './${context.name}';
             {
               relativePath: `${context.name}.composition.tsx`,
               content: `import React from 'react';
-import { ThemeProvider } from 'styled-components';
-import theme from '@play-to-learn/components.theme.palette';
 
-import ${context.namePascalCase} from './${context.name}';
+import { Default } from './${context.name}.stories';
 
-export const Basic${context.namePascalCase} = () => (
-  <ThemeProvider theme={theme.dark}>
-    <${context.namePascalCase}>hello from ${context.namePascalCase}</${context.namePascalCase}>
-  </ThemeProvider>
-);
+export const ${context.namePascalCase}Default = () => <Default />;
 `,
             },
 
@@ -108,11 +133,12 @@ export const Basic${context.namePascalCase} = () => (
               relativePath: `${context.name}.spec.tsx`,
               content: `import React from 'react';
 import { render } from '@testing-library/react';
-import { Basic${context.namePascalCase} } from './${context.name}.composition';
 
-it('should render with the correct text', () => {
-  const { getByText } = render(<Basic${context.namePascalCase} />);
-  const rendered = getByText('hello from ${context.namePascalCase}');
+import { ${context.namePascalCase}Default } from './${context.name}.composition';
+
+it('should be rendered', () => {
+  const { getByTestId } = render(<${context.namePascalCase}Default />);
+  const rendered = getByTestId('${context.name}-component-1');
   expect(rendered).toBeTruthy();
 });
 `,
