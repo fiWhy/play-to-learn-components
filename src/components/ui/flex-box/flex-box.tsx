@@ -4,15 +4,14 @@ import { FlexBoxProps } from './interfaces';
 import { FlexBoxWrapperStyled } from './styles';
 
 const FlexBox: ForwardRefRenderFunction<HTMLDivElement, FlexBoxProps> = (
-  { children, className, elementId, ...flexElementProps },
+  { children, elementId, ...flexElementProps },
   ref
 ) => {
   return (
     <FlexBoxWrapperStyled
+      {...flexElementProps}
       ref={ref}
       data-testid={elementId}
-      className={className}
-      {...flexElementProps}
     >
       {children}
     </FlexBoxWrapperStyled>

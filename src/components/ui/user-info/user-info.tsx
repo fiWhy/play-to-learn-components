@@ -38,7 +38,7 @@ const UserInfo: FC<UserInfoProps> = ({
   );
   return (
     <UserInfoWrapperStyled
-      data-testid={elementId}
+      elementId={elementId}
       className={className}
       direction={'row'}
     >

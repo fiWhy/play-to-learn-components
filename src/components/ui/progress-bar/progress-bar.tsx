@@ -13,7 +13,7 @@ const ProgressBar: FC<ProgressBarProps> = ({
 }) => {
   const percentage = useMemo(() => (actual * 100) / total, [actual, total]);
   return (
-    <ProgressBarWrapperStyled data-testid={elementId} className={className}>
+    <ProgressBarWrapperStyled elementId={elementId} className={className}>
       <ProgressBarStatusStyled
         style={{ width: `${percentage}%`, backgroundColor: color }}
       />

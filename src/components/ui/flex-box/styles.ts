@@ -7,6 +7,12 @@ export const FlexBoxWrapperStyled = styled.div<FlexBoxElementProps>`
   justify-content: ${({ justify }) => justify || 'flex-start'};
   align-items: ${({ align }) => align || 'flex-start'};
 
+  ${({ flex }) =>
+    flex &&
+    css`
+      flex: ${flex};
+    `}
+
   ${({ colSpace, direction }) =>
     colSpace &&
     direction === 'row' &&

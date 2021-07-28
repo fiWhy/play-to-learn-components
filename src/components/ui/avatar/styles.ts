@@ -38,8 +38,8 @@ export const AvatarWrapperStyled = styled(FlexBox)<{
         `;
       case 'small':
         return css`
-          width: 30px;
-          height: 30px;
+          width: 20px;
+          height: 20px;
         `;
     }
   }}

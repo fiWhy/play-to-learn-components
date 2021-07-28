@@ -4,5 +4,6 @@ export type EventHandler = (e: Event) => void;
 
 export type ClickOutsideHook = (
   ref: RefObject<HTMLElement>,
-  handler: EventHandler
+  handler: EventHandler,
+  ignore?: RefObject<HTMLElement>[]
 ) => void;

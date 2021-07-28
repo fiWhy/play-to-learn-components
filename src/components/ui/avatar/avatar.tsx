@@ -17,9 +17,10 @@ const Avatar: ForwardRefRenderFunction<HTMLDivElement, AvatarProps> = (
   return (
     <AvatarWrapperStyled
       {...other}
+      flexType={'inline-flex'}
       type={type}
       innerRef={ref}
-      data-testid={elementId}
+      elementId={elementId}
     >
       {src ? (
         <AvatarImageStyled src={src} alt={alt} />

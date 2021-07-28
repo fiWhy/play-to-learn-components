@@ -26,6 +26,7 @@ import {
 
 const Inventory = forwardRef<HTMLDivElement, InventoryProps>(
   ({ className, elementId, items, perPage = 10 }, ref) => {
+    const buttonRef = useRef<HTMLDivElement>(null);
     const inventoryBodyRef = useRef<HTMLDivElement>(null);
     const [open, setOpen] = useState(false);
     const [page, setPage] = useState(1);
@@ -33,6 +34,8 @@ const Inventory = forwardRef<HTMLDivElement, InventoryProps>(
       () => Math.ceil((items.length || 1) / perPage),
       [items, perPage]
     );
+
+    const ignoreClickOutside = useMemo(() => [buttonRef], []);
 
     const handleToggleOpen = useCallback(() => {
       setOpen(!open);
@@ -54,7 +57,7 @@ const Inventory = forwardRef<HTMLDivElement, InventoryProps>(
       }
     }, [page, totalPages]);
 
-    useClickOutside(inventoryBodyRef, handleClose);
+    useClickOutside(inventoryBodyRef, handleClose, ignoreClickOutside);
 
     const currentPageItems: InventoryProcessItem[] = useMemo(() => {
       const slicedItems = items.slice((page - 1) * perPage, page * perPage);
@@ -70,12 +73,16 @@ const Inventory = forwardRef<HTMLDivElement, InventoryProps>(
     return (
       <InventoryWrapperStyled
         innerRef={ref}
-        data-testid={elementId}
+        elementId={elementId}
         className={cn(className, {
           open,
         })}
       >
-        <InventoryButtonStyled direction={'row'} onClick={handleToggleOpen}>
+        <InventoryButtonStyled
+          innerRef={buttonRef}
+          direction={'row'}
+          onClick={handleToggleOpen}
+        >
           <TreasureIconStyled name={'ColoredTreasureBox'} size={32} />
           <ArrowIconStyled name={'RiArrowRightSLine'} />
         </InventoryButtonStyled>

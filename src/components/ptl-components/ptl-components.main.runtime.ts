@@ -57,11 +57,13 @@ export default {
   component: ${context.namePascalCase},
 } as Meta;
 
-const Template: Story<${context.namePascalCase}Props> = (args) => <ThemeProvider theme={theme.dark}>
+const Template: Story<${context.namePascalCase}Props> = (args) => (
+  <ThemeProvider theme={theme.dark}>
     <Fonts />
     <GlobalStyle />
     <${context.namePascalCase} {...args}>Hello from ${context.namePascalCase}</${context.namePascalCase}>
   </ThemeProvider>
+);
 
 export const Default = Template.bind({});
 
@@ -81,8 +83,9 @@ export interface ${context.namePascalCase}Props extends AutomationEnchancementPr
             {
               relativePath: 'styles.ts',
               content: `import { styled } from '@play-to-learn/components.theme.palette';
+import FlexBox from '@play-to-learn/components.ui.flex-box';
 
-export const ${context.namePascalCase}WrapperStyled = styled.div\`\`;`,
+export const ${context.namePascalCase}WrapperStyled = styled(FlexBox)\`\`;`,
             },
 
             // component file
@@ -96,7 +99,7 @@ import { ${context.namePascalCase}WrapperStyled } from './styles';
 
 const ${context.namePascalCase}: FC<${context.namePascalCase}Props> = ({ children, className, elementId }) => {
   return (
-    <${context.namePascalCase}WrapperStyled data-testid={elementId} className={className}>
+    <${context.namePascalCase}WrapperStyled elementId={elementId} className={className}>
       {children}
     </${context.namePascalCase}WrapperStyled>
   );

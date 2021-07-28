@@ -26,7 +26,7 @@ export const Default = Template.bind({});
 Default.args = {
   perPage: 10,
   items: [
-    ...Array(5)
+    ...Array(15)
       .fill(1)
       .map(() => ({
         description: 'Test',

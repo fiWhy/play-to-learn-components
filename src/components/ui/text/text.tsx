@@ -17,7 +17,7 @@ const Text: FC<TextProps> = (
     className,
     maxLength = 140,
     inline,
-    type,
+    type = 'Body-Default',
     light,
     italic,
     bold,

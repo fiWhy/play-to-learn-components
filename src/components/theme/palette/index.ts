@@ -1,5 +1,6 @@
 import baseStyled, {
   css as baseCss,
+  keyframes as baseKeyframes,
   ThemedCssFunction,
   ThemedStyledInterface,
   createGlobalStyle,
@@ -40,7 +41,7 @@ const general = {
             `,
       'Body-Default': `
               font-size: 14px;
-              line-height: 17px;
+              line-height: 20px;
               font-weight: 400;
             `,
       'Body-Small': `
@@ -58,9 +59,16 @@ const general = {
   radius: {
     button: '5px',
     cell: '10px',
+    sidebar: '20px',
+    dialogBox: '26px',
   },
   shadow: {
     main: `3px 4px 20px rgba(0, 0, 0, 0.1)`,
+    sidebar: `0px 4px 10px rgba(99, 62, 62, 0.12);`,
+  },
+  gradient: {
+    dialogBox:
+      'linear-gradient(179.41deg, #485275 0.51%, rgba(99, 109, 139, 0.29) 93.82%);',
   },
 };
 
@@ -83,6 +91,7 @@ const theme = {
         grey01: '#535B70',
         grey02: '#4E4E4E',
         grey03: '#E2E2E2',
+        grey04: '#353535',
         red01: '#EB4D4D',
         white: '#fff',
       },
@@ -108,6 +117,7 @@ const theme = {
         grey01: '#535B70',
         grey02: '#4E4E4E',
         grey03: '#E2E2E2',
+        grey04: '#353535',
         red01: '#EB4D4D',
         white: '#fff',
       },
@@ -123,6 +133,7 @@ export type TextType = keyof typeof theme['dark']['text']['type'];
 
 const styled = baseStyled as ThemedStyledInterface<Theme>;
 const css = baseCss as ThemedCssFunction<Theme>;
+const keyframes = baseKeyframes;
 
 const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
   html, body, #root, .App {
@@ -143,9 +154,11 @@ const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
 
     background-color: ${({ theme }) => theme.color.uiBackground};
     color: ${({ theme }) => theme.color.secondary.dark01};
+
+    ${({ theme }) => theme.text.type['Body-Default']};
   }
 `;
 
-export { styled, css, GlobalStyle };
+export { styled, css, GlobalStyle, keyframes };
 export default theme;
 export { default as Fonts } from './fonts';

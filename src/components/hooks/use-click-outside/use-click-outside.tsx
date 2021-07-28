@@ -1,7 +1,11 @@
 import { useEffect, useRef, useCallback } from 'react';
 import { ClickOutsideHook, EventHandler } from './interfaces';
 
-export const useClickOutside: ClickOutsideHook = (ref, handler) => {
+export const useClickOutside: ClickOutsideHook = (
+  ref,
+  handler,
+  ignore = []
+) => {
   const handlerRef = useRef<EventHandler>();
 
   useEffect(() => {
@@ -16,7 +20,12 @@ export const useClickOutside: ClickOutsideHook = (ref, handler) => {
 
   useEffect(() => {
     const listener = (event: Event) => {
-      if (!ref.current || ref.current.contains(event.target as Node)) {
+      if (
+        !ref.current ||
+        ref.current.contains(event.target as Node) ||
+        (ignore.length &&
+          ignore.some((el) => el.current?.contains(event.target as Node)))
+      ) {
         return;
       }
       handleEvent(event);
@@ -25,5 +34,5 @@ export const useClickOutside: ClickOutsideHook = (ref, handler) => {
     return () => {
       document.removeEventListener('click', listener);
     };
-  }, [ref, handleEvent]);
+  }, [ref, ignore, handleEvent]);
 };

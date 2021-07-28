@@ -3,7 +3,7 @@ import { TextType } from '@play-to-learn/components.theme.palette';
 
 export interface TextProps extends AutomationEnchancementProps {
   maxLength?: number;
-  type: TextType;
+  type?: TextType;
   className?: string;
   bold?: boolean;
   expandable?: boolean;
