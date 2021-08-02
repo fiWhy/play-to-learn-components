@@ -1,6 +1,6 @@
 {
   "name": "play-to-learn-components",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": true,
   "dependencies": {
     "typescript": "^4.3.5",
