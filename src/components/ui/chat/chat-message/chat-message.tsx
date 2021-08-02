@@ -36,11 +36,11 @@ const ChatMessage: FC<ChatMessageProps> = ({
       <AvatarWrapperStyled>
         {renderConditionalElement(from)}
       </AvatarWrapperStyled>
-      <InfoWrapperStyled flex={1} direction={'row'}>
+      <InfoWrapperStyled flex={1} direction={'column'}>
+        <DateWrapperStyled align={'flex-end'}>
+          <Text type={'Body-Small'}>{format(date, 'kk:mm')}</Text>
+        </DateWrapperStyled>
         <DialogBoxWrapperStyled>
-          <DateWrapperStyled align={'flex-end'}>
-            <Text type={'Body-Small'}>{format(date, 'kk:mm')}</Text>
-          </DateWrapperStyled>
           <MessageWrapperStyled>{children}</MessageWrapperStyled>
         </DialogBoxWrapperStyled>
       </InfoWrapperStyled>

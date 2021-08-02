@@ -60,15 +60,14 @@ const general = {
     button: '5px',
     cell: '10px',
     sidebar: '20px',
-    dialogBox: '26px',
+    dialogBox: '15px',
   },
   shadow: {
     main: `3px 4px 20px rgba(0, 0, 0, 0.1)`,
     sidebar: `0px 4px 10px rgba(99, 62, 62, 0.12);`,
   },
   gradient: {
-    dialogBox:
-      'linear-gradient(179.41deg, #485275 0.51%, rgba(99, 109, 139, 0.29) 93.82%);',
+    dialogBox: 'linear-gradient(180deg, #465072 35.53%, #333B54 110.44%);',
   },
 };
 
@@ -92,6 +91,7 @@ const theme = {
         grey02: '#4E4E4E',
         grey03: '#E2E2E2',
         grey04: '#353535',
+        grey05: '#9A9A9A',
         red01: '#EB4D4D',
         white: '#fff',
       },
@@ -118,6 +118,7 @@ const theme = {
         grey02: '#4E4E4E',
         grey03: '#E2E2E2',
         grey04: '#353535',
+        grey05: '#9A9A9A',
         red01: '#EB4D4D',
         white: '#fff',
       },
@@ -148,7 +149,7 @@ const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
     margin: 0;
     padding:0;
     
-    h1,h2,h3,h4,h5 {
+    h1,h2,h3,h4,h5, p.montserrat {
       font-family: 'Montserrat', 'Open Sans', sans-serif;
     }
 

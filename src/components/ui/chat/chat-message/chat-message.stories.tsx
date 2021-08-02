@@ -29,5 +29,5 @@ export const Default = Template.bind({});
 Default.args = {
   from: () => <Character type={'robot'} size={50} />,
   date: new Date(),
-  position: 'right',
+  position: 'left',
 };

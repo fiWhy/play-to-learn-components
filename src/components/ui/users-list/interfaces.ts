@@ -3,7 +3,7 @@ import { AutomationEnchancementProps } from '@play-to-learn/components.hocs.auto
 export interface UsersListElement {
   image: string;
   placeholder: string;
-  payload: any;
+  payload?: any;
 }
 
 export interface UsersListProps extends AutomationEnchancementProps {
