@@ -24,56 +24,74 @@ const Template: Story<SidebarProps> = (args) => (
   <ThemeProvider theme={theme.dark}>
     <Fonts />
     <GlobalStyle />
-    <Sidebar {...args} header={() => <HeaderComponent />}>
-      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-      doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-      inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-      Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
-      fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem
-      sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit
-      amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
-      incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad
-      minima veniam, quis nostrum exercitationem ullam corporis suscipit
-      laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum
-      iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
-      consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-      doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-      inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-      Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
-      fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem
-      sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit
-      amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
-      incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad
-      minima veniam, quis nostrum exercitationem ullam corporis suscipit
-      laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum
-      iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
-      consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-      doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-      inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-      Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
-      fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem
-      sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit
-      amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
-      incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad
-      minima veniam, quis nostrum exercitationem ullam corporis suscipit
-      laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum
-      iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
-      consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-      doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-      inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-      Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
-      fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem
-      sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit
-      amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
-      incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad
-      minima veniam, quis nostrum exercitationem ullam corporis suscipit
-      laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum
-      iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
-      consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-    </Sidebar>
+    <FlexBox
+      style={{
+        height: '100%',
+      }}
+      direction={'row'}
+    >
+      <FlexBox flex={1}></FlexBox>
+      <FlexBox
+        style={{
+          height: '100%',
+        }}
+      >
+        <Sidebar {...args} header={() => <HeaderComponent />}>
+          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
+          ab illo inventore veritatis et quasi architecto beatae vitae dicta
+          sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+          aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos
+          qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui
+          dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed
+          quia non numquam eius modi tempora incidunt ut labore et dolore magnam
+          aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
+          exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex
+          ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in
+          ea voluptate velit esse quam nihil molestiae consequatur, vel illum
+          qui dolorem eum fugiat quo voluptas nulla pariatur? Sed ut
+          perspiciatis unde omnis iste natus error sit voluptatem accusantium
+          doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
+          inventore veritatis et quasi architecto beatae vitae dicta sunt
+          explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
+          odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+          voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum
+          quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
+          eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
+          voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem
+          ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
+          consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate
+          velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum
+          fugiat quo voluptas nulla pariatur? Sed ut perspiciatis unde omnis
+          iste natus error sit voluptatem accusantium doloremque laudantium,
+          totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et
+          quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+          voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+          consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+          Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+          consectetur, adipisci velit, sed quia non numquam eius modi tempora
+          incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut
+          enim ad minima veniam, quis nostrum exercitationem ullam corporis
+          suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis
+          autem vel eum iure reprehenderit qui in ea voluptate velit esse quam
+          nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo
+          voluptas nulla pariatur? Sed ut perspiciatis unde omnis iste natus
+          error sit voluptatem accusantium doloremque laudantium, totam rem
+          aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+          architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+          voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+          consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+          Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+          consectetur, adipisci velit, sed quia non numquam eius modi tempora
+          incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut
+          enim ad minima veniam, quis nostrum exercitationem ullam corporis
+          suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis
+          autem vel eum iure reprehenderit qui in ea voluptate velit esse quam
+          nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo
+          voluptas nulla pariatur?
+        </Sidebar>
+      </FlexBox>
+    </FlexBox>
   </ThemeProvider>
 );
 
@@ -85,45 +103,59 @@ const ChatTemplate: Story<SidebarProps> = (args) => (
   <ThemeProvider theme={theme.dark}>
     <Fonts />
     <GlobalStyle />
-    <Sidebar {...args} header={() => <HeaderComponent />}>
+    <FlexBox
+      style={{
+        height: '100%',
+      }}
+      direction={'row'}
+    >
+      <FlexBox flex={1}></FlexBox>
       <FlexBox
         style={{
-          marginBottom: '20px',
+          height: '100%',
         }}
-        flex={1}
-        align={'center'}
       >
-        <Pin>Сегодня</Pin>
+        <Sidebar {...args} header={() => <HeaderComponent />}>
+          <FlexBox
+            style={{
+              marginBottom: '20px',
+            }}
+            flex={1}
+            align={'center'}
+          >
+            <Pin>Сегодня</Pin>
+          </FlexBox>
+          <FlexBox direction={'column'} rowSpace={20} flex={1}>
+            <ChatMessage
+              from={() => <Character type={'robot'} size={50} />}
+              date={new Date()}
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus,
+              facilisis commodo, vulputate quam sit lacus, risus.{' '}
+            </ChatMessage>
+            <ChatMessage
+              from={() => <Character type={'robot'} size={50} />}
+              date={new Date()}
+              position={'right'}
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus,
+              facilisis commodo, vulputate quam sit lacus, risus.{' '}
+            </ChatMessage>
+          </FlexBox>
+          <Button
+            style={{
+              position: 'fixed',
+              bottom: '60px',
+              right: '47px',
+            }}
+            tip={2}
+            btnType={'circle'}
+          >
+            <Icon size={30} name={'RiArrowDownSLine'} />
+          </Button>
+        </Sidebar>
       </FlexBox>
-      <FlexBox direction={'column'} rowSpace={20} flex={1}>
-        <ChatMessage
-          from={() => <Character type={'robot'} size={50} />}
-          date={new Date()}
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus,
-          facilisis commodo, vulputate quam sit lacus, risus.{' '}
-        </ChatMessage>
-        <ChatMessage
-          from={() => <Character type={'robot'} size={50} />}
-          date={new Date()}
-          position={'right'}
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus,
-          facilisis commodo, vulputate quam sit lacus, risus.{' '}
-        </ChatMessage>
-      </FlexBox>
-      <Button
-        style={{
-          position: 'fixed',
-          bottom: '60px',
-          right: '47px',
-        }}
-        tip={2}
-        btnType={'circle'}
-      >
-        <Icon size={30} name={'RiArrowDownSLine'} />
-      </Button>
-    </Sidebar>
+    </FlexBox>
   </ThemeProvider>
 );
 

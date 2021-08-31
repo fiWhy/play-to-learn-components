@@ -31,16 +31,13 @@ export const SidebarInnerStyled = styled(FlexBox)`
 `;
 
 export const SidebarWrapperStyled = styled(FlexBox)`
-  position: absolute;
+  position: relative;
   overflow: hidden;
-  right: 0;
   width: 605px;
   height: 95%;
   color: ${({ theme }) => theme.color.secondary.white};
   background: ${({ theme }) => theme.color.secondary.dark01};
   box-shadow: ${({ theme }) => theme.shadow.sidebar};
-  top: 50%;
-  transform: translateY(-50%);
   border-radius: ${({ theme }) =>
     `${theme.radius.sidebar} 0 0 ${theme.radius.sidebar}`};
 `;

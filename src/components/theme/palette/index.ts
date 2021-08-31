@@ -5,8 +5,10 @@ import baseStyled, {
   ThemedStyledInterface,
   createGlobalStyle,
 } from 'styled-components';
+import { entries } from 'lodash';
 
 const general = {
+  variables: {},
   text: {
     type: {
       'Heading-1': `
@@ -140,6 +142,16 @@ const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
   html, body, #root, .App {
     width: 100%;
     height: 100%;
+  }
+
+  html {
+    ${({ theme }) => {
+      return css`
+        ${entries(theme.variables).map(([key, value]) => `--${key}: ${value};`)
+          .join(`
+        `)}
+      `;
+    }}
   }
 
   body {

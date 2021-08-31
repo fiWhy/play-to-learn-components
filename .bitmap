@@ -109,6 +109,12 @@
         "mainFile": "index.ts",
         "rootDir": "src/components/ui/inventory"
     },
+    "ui/layout": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "src/components/ui/layout"
+    },
     "ui/pin": {
         "scope": "play-to-learn.components",
         "version": "0.0.3",
